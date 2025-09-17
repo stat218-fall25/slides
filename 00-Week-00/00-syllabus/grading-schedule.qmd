@@ -1,0 +1,256 @@
+---
+title: "grading"
+format: html
+---
+
+```{r}
+#| echo: false
+#| output: false
+
+library(tidyverse)
+library(lubridate)
+library(stevemisc)
+library(kableExtra)
+
+```
+
+
+```{r}
+#| echo: false
+#| output: true
+#| warning: false
+
+# Ref: http://svmiller.com/blog/2020/08/a-ggplot-calendar-for-your-semester/
+
+quarter_dates <- c(ymd(20251206),
+  seq(ymd(20250918), ymd(20251205), by=1)
+)
+class_wdays <- c("Mon", "Tue", "Wed", "Thu")
+
+not_here_dates <- c(
+  ymd("20251111"),
+  seq(ymd(20251124), ymd(20251128), by=1)
+)
+
+exam_dates <- c(ymd(20251016), ymd(20251206))
+
+project_dates <- ymd(20251113)
+
+finals_week <- seq(ymd(20251208), ymd(20251212), by = 1)
+
+# Create a data frame of dates, assign to Cal
+Cal <- tibble(date = seq(ymd(20250901), ymd(20251231), by=1))  |>
+  mutate(mon = lubridate::month(date, label = T, abbr = F),
+         wkdy = weekdays(date, abbreviate = T),
+         wkdy = fct_relevel(wkdy, "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"),
+         quarter = date %in% quarter_dates, 
+         project = date %in% project_dates,
+         exam = date %in% exam_dates,
+         not_here = date %in% not_here_dates, # Academic Holidays at Cal Poly
+         exam_wk = date %in% finals_week,
+         day = lubridate::mday(date), 
+         week = wom(date)
+         ) |>
+  mutate(category = case_when(
+    project ~ "Project Due",
+    exam ~ "Exam (In-Class)",
+    not_here ~ "Cal Poly Holiday",
+    quarter & wkdy %in% class_wdays & !not_here & !exam_wk | date == "2023-03-18" ~ "Class Day",
+    TRUE ~ "NA")
+  )
+
+class_cal <- Cal |> 
+  ggplot(aes(wkdy, week)) +
+  theme_bw() +
+  theme(aspect.ratio = 0.5, 
+        panel.grid.major.x = element_blank(),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        axis.title.y = element_blank(), 
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(), 
+        axis.text.y = element_blank()) +
+  geom_tile(alpha= 1, aes(fill=category), color="black", linewidth=.45) +
+  facet_wrap(~mon, scales = "free", ncol=2) +
+  geom_text(aes(label = day, color = quarter & (!not_here))) +
+  scale_y_reverse(breaks=NULL) +
+  scale_color_manual(values = c("FALSE" = "#E4E3D3", "TRUE" = "black"), guide = "none") + 
+  scale_fill_manual(values=c("Class Day" = "#154734", 
+                             "Exam (In-Class)" = "#D0DF00",
+                             "Project Due" = "#FF6A39",
+                             "Cal Poly Holiday" = "#BD8B13",
+                             "NA" = "white"),
+                    breaks=c("Class Day", "Cal Poly Holiday", "Exam (In-Class)", "Project Due"))
+class_cal
+```
+
+
+### Grading
+
+<div class="custom-table">
+  <style>
+    .custom-table table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto; /* Center the table */
+    }
+
+    .custom-table th, .custom-table td {
+      border: 1px solid #dddddd;
+      text-align: justify;
+      padding: 12px;
+    }
+
+    .custom-table tr:nth-child(1) {
+      background-color: #ffffff;
+    }
+
+    .custom-table tr:nth-child(2) {
+      background-color: #e1bee7; /* Light shade for 10% */
+    }
+
+    .custom-table tr:nth-child(3) {
+      background-color: #ce93d8; /* Medium shade for 15% */
+    }
+
+    .custom-table tr:nth-child(4) {
+      background-color: #ce93d8; /* Medium shade for 15% */
+    }
+
+    .custom-table tr:nth-child(5) {
+      background-color: #ce93d8; /* Medium shade for 15% */
+    }
+
+    .custom-table tr:nth-child(6) {
+      background-color: #ce93d8; /* Medium shade for 15% */
+    }
+
+    .custom-table tr:nth-child(7) {
+      background-color: #ab47bc; /* Darkest shade for 30% */
+    }
+
+    .custom-table tr:nth-child(8) {
+      background-color: #9c27b0; /* Total row */
+      color: #ffffff;
+    }
+  </style>
+
+  <table>
+    <tr>
+      <th>Assessment</th>
+      <th>Percentage</th>
+    </tr>
+    <tr>
+      <td>Weekly Assignments (Individual, Take Home)</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>Midterm 1 (Individual, In-class)</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>Project Presentation (Group, Take Home)</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>Lab Assignments (Group)</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>Investigation Assignments (Group)</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>Final Exam</td>
+      <td>30%</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>100%</td>
+    </tr>
+  </table>
+</div>
+
+### Letter Grades
+
+Your final grades will be determined based on the total points earned. It's essential to review the letter grades outlined below for a clear understanding of the grading criteria. __Please be aware that I will not "round up" grades at the end of the quarter.__
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .no-color-table table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto; /* Center the table */
+    }
+    .no-color-table th, .no-color-table td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      background-color: transparent; /* Set background color to transparent */
+    }
+  </style>
+</head>
+<body>
+
+<table class="no-color-table">
+  <tr>
+    <th>Letter Grade</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>$A$</td>
+    <td>$93 \le x$</td>
+  </tr>
+  <tr>
+    <td>$A^-$</td>
+    <td>$90 \le x < 93$</td>
+  </tr>
+  <tr>
+    <td>$B^+$</td>
+    <td>$87 \le x < 90$</td>
+  </tr>
+  <tr>
+    <td>$B$</td>
+    <td>$83 \le x < 87$</td>
+  </tr>
+  <tr>
+    <td>$B^-$</td>
+    <td>$80 \le x < 83$</td>
+  </tr>
+  <tr>
+    <td>$C^+$</td>
+    <td>$77 \le x < 80$</td>
+  </tr>
+  <tr>
+    <td>$C$</td>
+    <td>$73 \le x < 77$</td>
+  </tr>
+  <tr>
+    <td>$C^-$</td>
+    <td>$70 \le x < 73$</td>
+  </tr>
+  <tr>
+    <td>$D^+$</td>
+    <td>$67 \le x < 70$</td>
+  </tr>
+  <tr>
+    <td>$D$</td>
+    <td>$63 \le x < 67$</td>
+  </tr>
+  <tr>
+    <td>$D^-$</td>
+    <td>$60 \le x < 63$</td>
+  </tr>
+  <tr>
+    <td>$F$</td>
+    <td>$x < 60$</td>
+  </tr>
+</table>
+
+</body>
+</html>
+

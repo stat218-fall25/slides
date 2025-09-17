@@ -1,0 +1,524 @@
+---
+title: "Welcome to STAT 218!"
+author: "Sinem Demirci, PhD"
+format:
+  revealjs:
+      theme: simple
+      slide-number: true
+      incremental: true
+      chalkboard: true
+---
+
+
+##
+
+:::: {.columns}
+::: {.column width="55%"}
+::: {style="text-align: center"}
+
+**Instructor** 
+
+```{=html}
+<img src="img/sinem.jpeg" alt="A headshot of a woman with curly, short, shoulder-length hair with green eyes."
+  style="width: 200px; height: 200px; border-radius: 100%; margin-top: 5px; border: 1px solid whitesmoke; padding: 5px;">
+```
+
+::: {style="text-align: left"}
+
+<h1 style="font-size: 28px; margin-top: 20px;line-height: 0.5;">
+[{{< fa volume-high >}}](audio/how-to-pronounce-my-name.mp3) Dr. Sinem Demirci (she/her)
+</h1>
+
+<h1 style="font-size: 28px; margin-top: 20px;line-height: 0.5;">
+{{< fa building >}} <a href = "https://maps.app.goo.gl/7dTPXc1jELP4gs297" target="_blank" style="font-size: 28px; line-height: 0.5;"> 025-213</a>
+</h1>
+
+<h1 style="font-size: 28px; margin-top: 20px;line-height: 0.5;">
+{{< fa envelope >}} <a href = "mailto:sdemirci@calpoly.edu" style="font-size: 28px; line-height: 0.5;">sdemirci@calpoly.edu</a>
+</h1>
+
+::: {style="font-size: 30px; text-align: left"}
+
+**Instructor's office hours:**  
+**Mon:** 10:15 AM - 12:00 PM _(In-Office)_    
+**Wed:** 10:15 AM - 12:00 PM (_on [Zoom](https://calpoly.zoom.us/j/87196937778)_) {{< fa link >}}
+
+:::
+
+:::
+:::
+:::
+
+::: {.column width="45%"}
+::: {style="text-align: center"}
+
+
+**Grader**
+
+```{=html}
+<img src="img/chris.jpeg" alt="A headshot of a man with straight, short hair with brown eyes."
+  style="width: 200px; height: 200px; border-radius: 100%; margin-top: 5px; border: 1px solid whitesmoke; padding: 5px;">
+
+```  
+
+::: {style="text-align: center"}
+<h1 style="font-size: 30px; margin-top: 20px;line-height: 0.5;">Chris Liu</h1>
+
+<h1 style="font-size: 28px; margin-top: 20px;line-height: 0.5;">
+{{< fa envelope >}} <a href = "mailto:cliu119@calpoly.edu" style="font-size: 28px; line-height: 0.5;">cliu119@calpoly.edu</a>
+</h1>
+
+
+:::
+:::
+:::
+::::
+
+
+## 
+### Today's Menu
+
+<br>
+
+::: {style="font-size: 32px"}
+
+In this lecture, I will be briefly talking about
+
+1. Syllabus and Course Structure   
+2. What is Life Science?   
+3. What is Statistics? 
+4. Statistics and Life Science   
+5. Tomorrow's Content (If we have time)  
+
+
+
+:::
+
+
+##
+### Course Website and Syllabus
+
+<br>     
+<br>    
+
+We have a course [website](https://stat218-fall25.github.io/website/) to organize and manage our course materials.
+
+
+## 
+### Schedule
+
+<br>
+
+
+![](img/schedule.png){fig-align="center"} 
+
+
+
+##
+### Textbooks 
+
+::: {layout-ncol=2}
+
+![Main Textbook - See Next Slides](img/samuels.png)
+
+![For Lab Sessions - Free Online Textbook](img/openintro.png)
+
+:::
+
+## 
+
+::: {.columns}
+::: {.column width="50%"}
+![](img/samuels.png)
+:::
+
+::: {.column width="50%"}
+::: {style="text-align: right; font-size: 24px"}
+
+- Where can I get a copy of this book?
+  - There are few options that I found
+    - Cal Poly Mustang Shop   
+    -  {{< fa link >}} <a href="http://lib.calpoly.edu/search-and-find/course-reserves/" target="_blank">**Course Reserves**</a>
+    - {{< fa link >}} <a href="https://www.pearson.com/en-us/subject-catalog/p/statistics-for-the-life-sciences/P200000006339/9780137515011" target="_blank">**Pearson**</a> - you can subscribe for 4 months
+    - **Cal Poly Textbook Facebook page:** Rumor is that there is such a Facebook page where students sell textbooks at low prices. 
+    
+:::
+:::
+:::
+
+
+## 
+### Assessment
+
+![](img/grading.png){fig-align="center"} 
+
+
+##
+### Weekly Assignments (Individual)
+
+We will have individual weekly assignments, due Mondays at 11:59 PM. These aim to
+serve two purposes: 
+
+(1) Assessing your readiness level before beginning each week’s material; or 
+
+(2) Evaluating your understanding of the material covered in the preceding week. You will find them in Canvas.
+
+##
+### Exams and Project Presentation
+
+- Exams are to be taken in-class without the use of your course notes/ textbook/ assignments/ technological tools. Maybe a calculator.
+
+- __Project Presentation (Group):__ You will have the opportunity to present a scientific article related to your major. Details will be given.
+  - _Thu, Nov 13:_ Project Presentation (will be uploaded online)
+
+
+## 
+### Investigations (Group Assignments)
+
+::: {style="font-size: 32px"}
+
+- There will be 'Investigation Sessions' **every Tuesday** to be completed (hopefully) within classroom time. 
+
+- You are encouraged to work in groups on these assignments. **Each group should be composed of 2-3 students** to work and complete them together both in the class and/or after the class.
+
+- It will...
+
+  - focus more on a key statistical concept. 
+  - be turned in one write-up with all of your names. 
+  
+- All investigation assignments are due **Thursdays by 11:59 pm**.
+
+- You may work either the same group members or shuffle around.
+
+:::
+
+## 
+### Lab Assignments
+
+::: {style="font-size: 32px"}
+
+- There will be 'Lab Sessions' **every Thursday** to be completed (hopefully) within classroom time.  
+  - Lab sessions will be conducted in groups, and the lab assignments will also be group projects.  
+  - This means that you will submit your lab assignments as a group.  
+  - **Each group is composed of 2-3 students** to work and complete the labs together both in the class and/or after the class.
+
+- All lab assignments are due **Mondays by 11:59 pm**.
+
+- You may work either the same group members or shuffle around.
+
+
+- **Important:** Please refrain from including the names of group members who did not participate. In the event of absent students, they must either complete the lab assignment individually or coordinate with their group members to complete it together as a group project.
+
+:::
+
+##
+### In brief...
+
+<br>
+
+- **Monday & Wednesday:** Lecture-based approach
+
+- **Tuesday & Thursday:** Learn-by-doing approach
+
+
+## 
+### A Note on Attendance and Participation
+
+<br>
+
+::: {style="font-size: 32px"}
+
+**Attendance**
+
+- I will record attendance during every lecture, not for grading purposes, but to track your learning progress in this class. 
+
+  - In case of recurring absences, I will reach out to understand the reasons and work together to find solutions.
+
+:::
+
+
+## 
+### A Note on Attendance and Participation
+
+<br>
+
+::: {style="font-size: 32px"}
+
+**Participation**
+
+- Your active involvement enriches our learning environment and enhances everyone's experience. 
+
+  - It isn't about speaking up every day; it's about actively engaging with the material and activities. 
+  
+  - I respect that everyone participates in differently. 
+
+- In brief, you must be present in our classroom (both physically and mentally) unless you have an ["Excusable" Reason for Missing Class ](https://academicprograms.calpoly.edu/content/academicpolicies/class-attendance) 
+
+  - Please contact with me in advance if you are not coming and do your best to catch up 
+
+:::  
+
+# Frequently Asked Questions
+
+
+
+##
+### How can I call my professor?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+
+- Dr. Demirci (Dr. Deh-meer-jee)   
+- Prof. Demirci  
+- Dr. D.
+
+
+
+:::
+
+
+##
+### Why didn't you answer my email?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+I usually respond within 48 hours. If you haven't heard back...
+
+- Your email might have taken a detour.
+- You used a personal email address, and I thought it was a secret agent (from: undercover_hero@gmail.com).
+  - PLEASE USE YOUR CAL POLY EMAIL ADDRESS AND INCLUDE YOUR NAME AND THE COURSE YOU’RE IN.
+
+- My daughter might have accidentally deleted your email while she was busy saving Arendelle (Yes, I’m a proud Elsa mom—what can I say?).
+
+Please e-mail again after 48 hours. 
+
+
+:::
+
+##
+### Is there any study guide for this course?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+- Study daily.
+- Read the materials before coming to the lecture.
+  - It’s normal—part of the learning process—not to understand every single sentence.
+- Ask questions!
+- Come to my office hours (coffee and chocolate might be available).
+
+:::
+
+
+##
+### Can we use AI tools in this course?
+
+<br>
+
+- Yes and No. Please read our [AI policy](https://stat218-fall25.github.io/website/academic_honesty.html) ***very carefully*** to avoid any unintended consequences.
+
+##
+### I have math anxiety (alt text: not a tech-savvy person). What can I do to pass this class?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+- Looks like we have lots in common :p
+
+- I’m designing this course to be more conceptual and less algebraic. You can:
+
+  - Mute your inner critic.
+  - Come and ask for help.
+  - Believe in yourself.
+
+- We can do this together!
+
+:::
+
+##
+### What if I ask a stupid question?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+- There are no stupid questions!
+
+- I love seeing the variability in your answers—it helps me understand your learning patterns and improves my lectures.
+
+- I track participation, not correctness.
+
+:::
+
+##
+### Are you rounding up our grades at the end of the quarter?
+
+
+<br>
+
+::: {style="font-size: 32px"}
+
+- Nope! But during the quarter...
+
+  - I offer extra credit opportunities.
+  - I might curve grades if the class average is too low.
+
+:::
+
+##
+### I am switching my major. Can you give me a B+?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+- REMEMBER! This is your responsibility to study this lecture and get a B+.
+
+<br>
+
+- I can’t help you in Weeks 7, 8, or 10, or during final weeks.
+
+- If you’re switching majors, let me know in advance so I can provide extra office hours or materials to help you maximize your grade.
+
+
+
+
+:::
+
+##
+### Why are we using the R Programming Language?
+
+<br>
+
+::: {style="font-size: 32px"}
+
+- It’s a computer language—every college graduate/researcher/professional should have a basic literacy in the 21st century.
+
+- We will NOT learn how to code from scratch.
+
+- We’ll learn the nature of the language and modify basic codes by changing dataset names and variable names.
+
+:::
+
+##
+### Do we have to shuffle our groups every week?
+
+::: {style="font-size: 32px"}
+
+No, but...
+
+- Sometimes students don’t share the workload equally.
+- Some group dynamics might not work.
+
+
+<br>
+
+::: fragment
+If you’re happy with your group, feel free to stick together for all investigations and labs.
+:::
+:::
+
+##
+### Can I work individually?
+
+::: {style="font-size: 32px"}
+
+Yes, but...
+
+- It could be overwhelming as tasks are designed for 2-3 people.
+- You should learn how to work in a group.
+- Let me know if you do not want to work alone but didn’t find any groups.
+
+:::
+
+
+# Life Science and Statistics
+
+::: {style="font-size: 32px"}
+
+:::
+
+## 
+### What is Life Science?
+
+
+
+Give me your own definition, please!
+
+<br>
+
+![](img/what-is-life-science.png){fig-align="center"} 
+
+
+## 
+### What is Statistics?
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 24px"}
+
+ <a href="https://www.calpoly.edu/major/statistics" target="_blank">**How Does Cal Poly Statistics Define Statistics?**</a>
+ 
+ - Statistics is the science of collecting, organizing, analyzing and interpreting data using visualizations and models to help others make informed decisions. Statisticians find meaning in the data by looking at representative samples in order to make inferences about the whole. Statistics provides the foundation for data science and is important in many fields as different as retail sales, insurance and scientific research.
+
+
+
+:::
+:::
+
+::: {.column width="50%"}
+
+::: {style="font-size: 24px"}
+
+**Some Other Perspectives for Statistics**
+
+- The Science of Uncertainty
+- The study of numbers that helps you understand how likely it is that your last-minute cramming will lead to a passing grade
+
+- The magical tool that allows you to make a reasonable guess about the outcome of a lottery based on how many tickets you haven’t bought.
+
+
+:::
+:::
+:::
+
+
+## 
+### Statistics and Life Science
+::: {style="font-size: 28px"}
+::: {.incremental}
+
+From *The Rise of Statistical Thinking, 1820 - 1900*
+
+
+- "Only through their successful application to the refractory but rich problems of the social and biological sciences did the probabilistic techniques of error analysis grow into the powerful and flexible method of analysis that we know as mathematical statistics." (Porter, 2020, p.4) 
+
+- "The further development of statistical mathematics was, until the end of the nineteenth century, largely the result of work in other natural and social scientific disciplines." (p.7) 
+
+:::
+:::
+
+
+## 
+### Sustainable Development Goals
+
+<a title="United Nations, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Sustainable_Development_Goals.png"><img width="4096" alt="Sustainable Development Goals" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Sustainable_Development_Goals.png/4096px-Sustainable_Development_Goals.png"></a>
+
+
+
+## 
+### Next Week's Content
+
+- See the course website for the reading assignment.
+
+
+## References
+::: {style="font-size: 24px"}
+
+Porter, T. M. (2020). The Rise of Statistical Thinking, 1820–1900. Princeton University Press. https://doi.org/10.2307/j.ctvxcrz1v
+:::
