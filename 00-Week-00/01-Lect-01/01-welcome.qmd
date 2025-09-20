@@ -40,8 +40,8 @@ format:
 ::: {style="font-size: 30px; text-align: left"}
 
 **Instructor's office hours:**  
-**Mon:** 10:15 AM - 12:00 PM _(In-Office)_    
-**Wed:** 10:15 AM - 12:00 PM (_on [Zoom](https://calpoly.zoom.us/j/87196937778)_) {{< fa link >}}
+**Mon:** 11:10 AM - 12:50 PM _(In-Office)_    
+**Wed:** 02:10 - 03:50 PM (_on [Zoom](https://calpoly.zoom.us/j/85398849607)_) {{< fa link >}}
 
 :::
 
