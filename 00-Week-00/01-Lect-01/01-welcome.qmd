@@ -437,87 +437,9 @@ Yes, but...
 :::
 
 
-# Life Science and Statistics
-
-::: {style="font-size: 32px"}
-
-:::
-
-## 
-### What is Life Science?
-
-
-
-Give me your own definition, please!
-
-<br>
-
-![](img/what-is-life-science.png){fig-align="center"} 
-
-
-## 
-### What is Statistics?
-::: columns
-::: {.column width="50%"}
-::: {style="font-size: 24px"}
-
- <a href="https://www.calpoly.edu/major/statistics" target="_blank">**How Does Cal Poly Statistics Define Statistics?**</a>
- 
- - Statistics is the science of collecting, organizing, analyzing and interpreting data using visualizations and models to help others make informed decisions. Statisticians find meaning in the data by looking at representative samples in order to make inferences about the whole. Statistics provides the foundation for data science and is important in many fields as different as retail sales, insurance and scientific research.
-
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: {style="font-size: 24px"}
-
-**Some Other Perspectives for Statistics**
-
-- The Science of Uncertainty
-- The study of numbers that helps you understand how likely it is that your last-minute cramming will lead to a passing grade
-
-- The magical tool that allows you to make a reasonable guess about the outcome of a lottery based on how many tickets you haven’t bought.
-
-
-:::
-:::
-:::
-
-
-## 
-### Statistics and Life Science
-::: {style="font-size: 28px"}
-::: {.incremental}
-
-From *The Rise of Statistical Thinking, 1820 - 1900*
-
-
-- "Only through their successful application to the refractory but rich problems of the social and biological sciences did the probabilistic techniques of error analysis grow into the powerful and flexible method of analysis that we know as mathematical statistics." (Porter, 2020, p.4) 
-
-- "The further development of statistical mathematics was, until the end of the nineteenth century, largely the result of work in other natural and social scientific disciplines." (p.7) 
-
-:::
-:::
-
-
-## 
-### Sustainable Development Goals
-
-<a title="United Nations, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Sustainable_Development_Goals.png"><img width="4096" alt="Sustainable Development Goals" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Sustainable_Development_Goals.png/4096px-Sustainable_Development_Goals.png"></a>
-
-
 
 ## 
 ### Next Week's Content
 
 - See the course website for the reading assignment.
 
-
-## References
-::: {style="font-size: 24px"}
-
-Porter, T. M. (2020). The Rise of Statistical Thinking, 1820–1900. Princeton University Press. https://doi.org/10.2307/j.ctvxcrz1v
-:::
