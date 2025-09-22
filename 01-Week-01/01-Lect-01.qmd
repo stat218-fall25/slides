@@ -234,8 +234,8 @@ Data alone can’t make good decisions. We need a solid approach.
 ::: {style="font-size: 28px"}
 
 
-- An __anecdote__ is a concise story or illustration of a captivating event, as illustrated in our cases. 
-  - A man on the news got mercury poisoning from eating swordfish, so the average mercury concentration in swordfish must be dangerously high.
+- An __anecdote__ is a concise story or illustration of a captivating event. 
+  - E.g., A man on the news got mercury poisoning from eating swordfish, so the average mercury concentration in swordfish must be dangerously high.
 
 <br>
 
@@ -297,7 +297,7 @@ The design of this experiment allows for the investigation of the interaction be
 
 - self-reported improvement in symptoms and group type (experimental/placebo). 
 
-- In this scenario, researchers applied the conditions—specifically, different light levels to the subjects, which were _Homo sapiens_.
+- In this scenario, researchers applied the conditions—specifically, different group types to the subjects, which were _Homo sapiens_.
 
 - By **randomly assigning** treatments to the subjects, we can address the issue of confounding that complicates observational studies, thereby expanding the scope of conclusions we can draw from the research.
 
