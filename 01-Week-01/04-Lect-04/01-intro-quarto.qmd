@@ -190,7 +190,7 @@ How to Create a New Quarto Document
 
 ![](img/image-6.png)
 
-## Let's Create An Object
+## Creating An Object
 
 ::: {style="text-align: left; font-size: 28px"}
 
@@ -234,8 +234,6 @@ my_birthyear
 
 ![](img/image-11.png)
 
-
-:::
 :::
 
 
