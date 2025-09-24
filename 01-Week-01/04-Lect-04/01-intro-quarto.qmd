@@ -1,0 +1,351 @@
+---
+title: "Introduction to R & RStudio"
+subtitle: "Week 1 - Lecture 4 & Lab 0"
+format: 
+  revealjs:
+      theme: simple
+      slide-number: true
+      chalkboard: true
+      incremental: true
+---
+
+
+# Hello R, This is Me!
+
+
+
+## Today...
+
+::: {style="font-size: 30px"}
+
+In this lecture, we will...
+
+- learn what is R, RStudio and Quarto Document   
+- create A STAT-218 Folder in Your Desktop 
+- create A New Quarto Document  
+  - save this document to your STAT-218 Folder  
+- fill out the document  
+  - have first coding experience by  
+    - saying Hello World!   
+    - creating an Object   
+    - running some functions   
+- learn How to Get Help  
+- render The First PDF
+
+:::
+
+## R and RStudio
+
+::: {.columns}
+::: {.column width="50%"}
+::: {style="text-align: center; font-size: 10px"}
+
+
+
+<a title="Hadley Wickham and others at RStudio, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:R_logo.svg"><img width="256" alt="R logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/512px-R_logo.svg.png"></a>  
+
+
+<a href="https://commons.wikimedia.org/wiki/File:R_logo.svg">Hadley Wickham and others at RStudio</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
+<br/><br/>
+<br/><br/>
+
+
+<a title="RStudio, Inc., Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:RStudio_logo_flat.svg"><img width="300" alt="RStudio logo flat" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/RStudio_logo_flat.svg/512px-RStudio_logo_flat.svg.png"></a>
+
+<a href="https://commons.wikimedia.org/wiki/File:RStudio_logo_flat.svg">RStudio, Inc.</a>, Public domain, via Wikimedia Commons
+
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="text-align: right; font-size: 24px"}
+
+- **R** is a computer language.
+
+- **R** is an environment for statistical computing and graphics.
+
+  - **R** provides a wide variety of statistical and graphical techniques.
+  
+- **R** is a free open source software
+
+<br/><br/>
+
+- **RStudio** is an *integrated development environment* (IDE) for **R**
+- **RStudio** has four main panes each in a quadrant of your screen
+
+:::
+:::
+:::
+
+## What Can We Do with RStudio?
+
+- Everything we need to do for this class and beyond!
+  
+  
+## What is Quarto Document?
+::: {style="font-size: 30px"}
+
+Quarto is...
+
+- an open-source scientific and technical publishing system
+- a multi-language, next-generation version of R Markdown.
+- enabling you to combine code and text to create rich outputs, like reports and presentations. _(like an advanced version of a word processing tool)_   
+
+::: fragment
+::: callout-important
+
+- R is the programming language for statistical computing  
+- RStudio is the IDE that facilitates R programming  
+- Quarto document is a document type that combines text and code  
+- In short, we will create Quarto documents in RStudio and we will combine text and R codes in that Quarto document to create our lab reports.
+
+
+:::
+:::
+
+:::
+
+# Today's Tasks 
+
+## 
+### Task 1: Create A Folder
+
+![](img/folder.png)
+
+
+
+## 
+### Task 2: Creating a Quarto Document
+::: {style="font-size: 30px"}
+
+<br> 
+<br>
+
+::: callout-tip
+You can create your own Quarto document by clicking `File > New File > Quarto Document`
+
+Let's try to create our first Quarto document!
+
+:::
+
+<br>
+
+__WARNING!__ I use Windows, you may use Mac or Linux or online version of R. Thus, your screen might look a bit different than mine.
+
+:::
+
+## 
+### Task 2: Creating and Saving a Quarto Document
+
+::: {style="text-align: center; font-size: 23px"}
+
+<img src="img/new-quarto.png" alt="Pane Layout in RStudio">
+
+How to Create a New Quarto Document
+:::
+
+## 
+### Task 2: Creating and Saving a Quarto Document
+
+- You can save your own Quarto document by clicking 
+
+  - `File > Save` 
+
+- After that, YOU NEED TO FIND YOUR FOLDER TO SAVE YOUR FILE.
+
+
+## Panes in RStudio
+
+![](img/panes-in-R.png)
+
+##
+### A Closer Look into the Quarto Document
+
+![](img/quarto-basics.png)
+
+## 
+#### Task 3: Play with Your First Quarto Document
+
+![](img/image-1.png)
+
+## 
+#### Delete The Default Content
+
+![](img/image-2.png)
+
+##
+#### Add Headings and Text
+
+![](img/image-3.png)
+
+
+## 
+#### Add A Code Chunk
+
+![](img/image-5.png)
+
+## 
+#### Add This Simple Code
+
+![](img/image-6.png)
+
+## Let's Create An Object
+
+::: {style="text-align: left; font-size: 28px"}
+
+<br/>
+
+We create an object by using "<-" called as "Object Assignment Operator"
+
+<br>
+
+  |               | Windows        | Mac              |
+  |---------------|:--------------:|:----------------:|
+  | Shortcut      | Alt _and_ -    | Option _and_ -   |
+
+
+<br/><br/>
+
+
+```{r}
+#| echo: true
+#| output: true
+
+my_birthyear <- 1988
+my_birthyear
+
+```
+
+:::
+
+##
+#### Run the Code Chunk
+
+![](img/image-4.png)
+
+
+## 
+####  Say, Hello World!
+::: {style="font-size: 20px"}
+
+- **hello world** is a phrase that most programmers use when they first begin programming in any language. 
+  - Let's write our first **"hello world!"** together.
+
+![](img/image-11.png)
+
+
+:::
+:::
+
+
+
+## Vocabulary Section
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+do(something)
+
+```
+::: {style="text-align: center; font-size: 28px"}
+
+`do()` is a function;
+
+`something` is the argument of the function.
+:::
+
+
+```{r}
+#| eval: false
+#| echo: true
+do(something, colorful) # I can put here a comment by using hashtag
+```
+
+::: {style="text-align: center; font-size: 28px"}
+
+`do()` is a function;   
+`something` is the first argument of the function;   
+`colorful` is the second argument of the function.  
+
+R **ignores** comments if you put **#** like above
+:::
+
+<br/><br/>
+
+::: {style="text-align: left; font-size: 18px"}
+*I love {{< fa link >}} <a href="https://www.minedogucu.com/" target="_blank">**Dr. Dogucu's**</a>  teaching strategy to teach students the basics of coding. This is how she explains the idea of coding. I am using some of her strategies during this session.*
+:::
+
+
+
+##
+#### Check Your Document Before Rendering
+
+
+![](img/image-11.png)
+
+
+## Rendering a PDF Document
+
+::: {style="font-size: 30px"}
+
+- The Quarto document that we created is a _source file_.
+
+- By rendering this, will have a different _output file_ (e.g., PDF)
+
+
+
+:::
+
+## Rendering a PDF Document
+
+::: {style="font-size: 30px"}
+
+Open your terminal pane and type the following:
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+quarto install tinytex
+
+```
+
+<br>
+
+:::
+
+![](img/image-9.png){width=120%}
+
+
+## Rendering a PDF Document
+
+![](img/image-10.png){fig-align="center"}
+
+## Rendering a PDF Document
+
+![](img/image-8.png){fig-align="center"}
+
+## Rendering a PDF Document
+
+![](img/image-12.png){fig-align="center"}
+
+
+## Lab Assignment 0
+
+- Please upload this PDF document to our Canvas page as __LAB Assignment 1 (Individual)__  
+ 
+- Begining from next week, we will start working in groups. 
+
+## CONGRATULATIONS
+
+<br>
+
+Now, you can close your RStudio. 
+
+Everything you did is in your STAT 218 folder!
+
