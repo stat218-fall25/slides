@@ -1,0 +1,103 @@
+---
+title: "STAT 218 Lab Assignment 1"
+author: 
+  - "Team Member 1: NAME HERE"
+  - "Team Member 2: NAME HERE"
+  - "Team Member 3: NAME HERE"
+format: pdf
+execute:
+  echo: true
+---
+
+
+## Lab Assignment 1
+
+In this assignment, we will work with the data available in the package of `palmerpenguins`. Let's install and use that package. And let's load our data into R by using `data()` function.
+
+Run the code chunk below. 
+
+```{r}
+#| include: false
+install.packages("palmerpenguins" , repos = "http://cran.us.r-project.org")
+library(palmerpenguins)
+data("penguins") 
+```
+
+**NOTE:** Please ignore `penguins_raw` data for this class and USE `penguins` for this assignment.
+
+**Question 0: Please add a code chunk below and add necessary `library()` functions (look at the Slide 10). If you skip this part, your functions will not work.**
+
+```{r}
+
+# Delete this sentence and add your R Code here. 
+
+```
+
+**Question 1: Please use `glimpse()`function and write 2-3 sentences to explain what you see.**
+
+
+```{r}
+
+# Delete this sentence and add your R Code here. 
+
+```
+
+
+Type your answer (2-3 sentences) here.
+
+
+**Question 2: How many variables and cases do this dataset have? Use necessary functions to find the answer.**
+
+```{r}
+
+# Delete this sentence and add your R Code here. 
+
+```
+
+
+Type your answer here.
+
+
+**Question 3: What types of variables are there in this data set? Identify each variable below (categorical, categorical - binary, quantitative)**
+
+**species:**
+
+**island:**
+
+**bill_length_mm:**
+
+**bill_depth_mm:**
+
+**body_mass_g:**
+
+**flipper_length_mm:**
+
+**sex:**
+
+**year:**
+
+
+**Question 4: Compute the mean, median and standard deviation values for `bill_length_mm`.**  
+*(Hint: You will see `NA` values when you run the function because of missing data. Use the Console Pane by typing `?mean` to find which argument is helpful for removing NAs.)*
+
+
+```{r}
+
+# Delete this sentence and add your R Code here. 
+
+```
+
+Explain what you see in the output
+
+**Question 5: Please create a bar chart by using `ggplot()` function for the variable `species`.**
+
+
+```{r}
+
+# Delete this sentence and add your R Code here. 
+
+```
+
+Explain what you see in the output.
+
+**DO NOT FORGET TO RENDER YOUR QUARTO DOCUMENT TO PDF!**

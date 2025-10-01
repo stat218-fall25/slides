@@ -1,0 +1,377 @@
+---
+title: "Lab 1 - Descriptive Statistics in R - Part I"
+subtitle: "Week 2, Lecture 4"
+format: 
+  revealjs:
+      theme: simple
+      slide-number: true
+      chalkboard: true
+---
+
+
+# Take Away Messages From Last Week
+
+## 
+### How to Create An Object
+
+::: {style="text-align: left; font-size: 28px"}
+
+<br/>
+
+We create an object by using "<-" called as "Object Assignment Operator"
+
+<br>
+
+  |               | Windows        | Mac              |
+  |---------------|:--------------:|:----------------:|
+  | Shortcut      | Alt _and_ -    | Option _and_ -   |
+
+:::
+
+## 
+### Vocabulary Section
+
+
+```{r}
+#| eval: false
+#| echo: true
+
+do(something)
+
+```
+::: {style="text-align: center; font-size: 28px"}
+
+`do()` is a function;
+
+`something` is the argument of the function.
+:::
+
+
+```{r}
+#| eval: false
+#| echo: true
+do(something, colorful) # I can put here a comment by using hashtag
+```
+
+::: {style="text-align: center; font-size: 28px"}
+
+`do()` is a function;   
+`something` is the first argument of the function;   
+`colorful` is the second argument of the function.  
+
+R **ignores** comments if you put **#** like above
+:::
+
+<br/><br/>
+
+::: {style="text-align: left; font-size: 18px"}
+*I love {{< fa link >}} <a href="https://www.minedogucu.com/" target="_blank">**Dr. Dogucu's**</a>  teaching strategy to teach students the basics of coding. This is how she explains the idea of coding. I am using some of her strategies during this session.*
+:::
+
+
+##
+### Before Proceeding Further...
+
+![](img/step-1.png)
+
+
+##
+### Before Proceeding Further...
+
+![](img/step-2.png)
+
+
+## Today's Menu
+
+Today we will cover:
+
+- more functions in R
+- How to Install Packages
+- Loading Data into R
+- Summary Statistics
+- `ggplot()`
+
+## A Quick note
+
+<br>
+
+- Next slides are just for demonstration purposes. Please do not code, just watch my demo. 
+
+- After that, you will start working with your group members.
+
+- You may not finish your first lab assignment today but you have time until Sunday midnight. 
+
+
+## 
+### How Can I Install a Package and Use It?
+::: {style="text-align: left; font-size: 24px"}
+
+- R users can create/contribute packages, and they are free! 
+
+- For this lab, and many others in the future, we will use:
+
+  - The `tidyverse` “umbrella” package which has many different R packages for data wrangling and data visualization
+  -   The `openintro` R package is our second textbook's package and we will use this for our lab sessions.
+  - Let's download them!
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages("tidyverse")
+install.packages("openintro")
+  
+```
+
+:::
+
+
+
+
+## 
+### The Library Function in R
+::: {style="font-size: 30px"}
+
+
+The `library()` function in R is like opening a toolbox. Each toolbox (library) contains tools (packages) for specific tasks.
+
+When you use the `library()` function, you're telling R to open a specific toolbox (load a package) so that you can access and use the tools inside.
+
+<br>
+
+
+Let's add a code chunk to our Quarto document and type the code below.
+
+```{r}
+#| echo: true
+#| output: false
+library(tidyverse)
+library(openintro)
+
+```
+
+:::
+
+
+## 
+### How to Load Data into R
+
+We have two different ways to do that (within the scope of this class)
+
+- Using an available dataset stored in R (packages) (today)
+- Importing a dataset from an outside source
+
+
+## 
+
+::: {style="font-size: 30px"}
+
+Let's use a dataset from `openintro` package.
+
+```{r}
+#| echo: true
+#| output: false
+
+data("births")
+
+```
+
+![](img/data.png){fig-align="center"}
+:::
+
+## 
+
+### Getting to Know Your Data
+::: {style="font-size: 28px"}
+
+After importing our data, it is important to familiarize with our data. We have some functions to do that. 
+
+Let's start with `glimpse()` function. The name of this function is self-explanatory. 
+
+```{r}
+#| echo: true
+#| output: false
+glimpse(births)
+
+```
+
+`glimpse()` function gives us a brief information about out data set. We have  __`r ncol(births)` variables__ and __`r nrow(births)` cases__ or __observations__.
+
+:::
+
+## 
+
+### Getting to Know Your Data
+::: {style="font-size: 28px"}
+
+Alternatively, we can ask R the number of columns (variables) and rows (cases) as following:
+
+```{r}
+#| echo: true
+#| output: true
+ncol(births) ## gives us the number of columns (variables)
+nrow(births) ## gives us the number of rows (cases)
+
+```
+
+Assume that I would like to see just the names of the variables in my data set. I can use `names()`function for this.
+
+```{r}
+#| echo: true
+#| output: true
+names(births)
+```
+
+:::
+
+## 
+### Frequency Distribution Table (An Ugly One!)
+::: {style="font-size: 28px"}
+Let's construct a frequency distribution table by using `count()`function. 
+
+```{r}
+#| echo: true
+#| output: true
+count(births, premature)
+
+```
+:::
+
+## 
+### Measures of Central Tendency
+
+<br>
+
+We can calculate measures of central tendency by using these unsurprising functions. 
+
+Pay attention to the $ sign.
+
+
+```{r}
+#| echo: true
+#| output: true
+
+mean(births$weight)
+median(births$weight)
+```
+
+
+
+## 
+### Measures of Dispersion
+
+```{r}
+#| echo: true
+#| output: false
+
+sd(births$weight) # sample standard deviation
+
+```
+
+
+## 
+### Measures of Central Tendency
+
+<br>
+
+Alternatively, you can use `summarize()` function for the same calculations.
+
+
+```{r}
+#| echo: true
+#| output: true
+
+summarize(births,
+          mean(weight),
+          median(weight),
+          sd(weight))
+```
+
+
+
+## An Example for Bar Chart
+
+Let's plot a simple bar chart. Next session, we will explore other features for `ggplot()`.
+
+```{r}
+#| echo: true
+#| output: false
+ggplot(data = births,
+       aes(x = premature,
+           fill = premature)) + 
+  geom_bar(stat = "count") +
+  labs(title = "Whether the Babies Were Premature or Not",
+       x = "premature",
+       y = "Number of Babies"
+       )
+```
+
+## An Example for Bar Chart
+
+Let's plot a simple bar chart. Next session, we will explore other features for `ggplot()`.
+
+```{r}
+#| echo: false
+#| output: true
+ggplot(data = births,
+       aes(x = premature,
+           fill = premature)) + 
+  geom_bar(stat = "count") +
+  labs(title = "Whether the Babies Were Premature or Not",
+       x = "premature",
+       y = "Number of Babies"
+       )
+```
+
+# HOW CAN YOU STUDY WITH YOUR GROUP MEMBERS?
+
+## 
+#### A SUGGESTION
+::: {style="font-size: 24px"}
+
+To ensure the group’s work is divided equitably each week, your team will be rotating through a set of group roles. This ensures one person doesn’t act as the group leader for multiple sessions of class, while someone else is always the note taker. You will circulate through the following roles each week:
+
+_Project Manager:_
+
+- Coordinate the group's activities, ensuring tasks are assigned and deadlines are met.
+- Facilitate communication within the group and with the instructor.
+- Ensure the final assignment is compiled and submit it.
+
+_Note Taker:_
+
+- Responsible for interpreting and documenting the outputs generated from R scripts/codes.
+- Take notes on key findings, insights, and interpretations derived from the data and analyses.
+
+_Coder:_
+
+- Lead the coding efforts, writing and managing the R scripts.
+- Ensure code quality, functionality, and documentation standards are met.
+
+:::
+
+## 
+#### A SUGGESTION
+
+- If you work in pairs, skip the project manager role ans switch coding/note-taking every week.
+
+- Note takers should either take notes to a paper or a Word document and add them later to the quarto document once coding part finished.
+
+##
+### Today's Quarto Document
+
+
+::: callout-tip
+
+- Let's download today's Quarto document from Canvas under the LAB Assignment 1 (GROUP) titled as `02-Lab-Assignment-01.qmd`
+- DO NOT FORGET to save it to your STAT 218 Folder!
+
+:::
+
+
+## How to Complete Lab Assignment 1
+
+- Just go back and follow this slide show from the beginning of Slide 9. 
+
+- You will be mainly changing the name of the data set and variables.
+
+- Call me over if you have any questions.
