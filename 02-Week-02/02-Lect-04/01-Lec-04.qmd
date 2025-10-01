@@ -370,7 +370,7 @@ _Coder:_
 
 ## How to Complete Lab Assignment 1
 
-- Just go back and follow this slide show from the beginning of Slide 9. 
+- Just go back and follow this slide show from the beginning of Slide 10. 
 
 - You will be mainly changing the name of the data set and variables.
 

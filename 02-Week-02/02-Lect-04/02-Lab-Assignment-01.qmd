@@ -14,11 +14,13 @@ execute:
 
 In this assignment, we will work with the data available in the package of `palmerpenguins`. Let's install and use that package. And let's load our data into R by using `data()` function.
 
-Run the code chunk below. 
+Run the code chunk below. I will help you download the necessary packages.
 
 ```{r}
 #| include: false
 install.packages("palmerpenguins" , repos = "http://cran.us.r-project.org")
+install.packages("tidyverse" , repos = "http://cran.us.r-project.org")
+install.packages("openintro", repos = "http://cran.us.r-project.org")
 library(palmerpenguins)
 data("penguins") 
 ```
