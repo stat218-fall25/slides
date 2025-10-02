@@ -27,7 +27,7 @@ data("penguins")
 
 **NOTE:** Please ignore `penguins_raw` data for this class and USE `penguins` for this assignment.
 
-**Question 0: Please add a code chunk below and add necessary `library()` functions (look at the Slide 10). If you skip this part, your functions will not work.**
+**Question 0: Please add necessary `library()` functions (look at the Slide 10). If you skip this part, your functions will not work.**
 
 ```{r}
 
