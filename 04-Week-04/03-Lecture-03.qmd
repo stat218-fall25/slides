@@ -1,0 +1,420 @@
+---
+title: "Inference for Means & Confidence Interval for µ"
+subtitle: "STAT 218 - Week 4, Lecture 3"
+format: 
+  revealjs:
+      theme: simple
+      slide-number: true
+      chalkboard: true
+---
+
+
+# Inference for Means
+
+##
+### Important Symbols
+
+To distinguish a quantitative variable from a categorical variable, we use different symbols to show population parameters and sample statistics.
+
+__Parameters__
+
+$\mu$ = population mean
+
+$\sigma$ = population standard deviation
+
+__Statistics__
+
+$\bar{x}$ = sample mean
+
+$s$ = sample standard deviation
+
+
+## 
+### College Midwest - Example
+
+- Let’s consider a situation (again) where we actually have access to the entire population.
+- We recently obtained data on the student body of a small college in the Midwest. 
+  - There are 2,919 students in this population.
+  - We will take a random sample of 30 students.
+  
+##
+::: {style="font-size: 28px"}
+
+__Observational Unit__: A student in that college.
+__Variable__: Cumulative GPA
+__Statistic__: Sample Mean
+
+![](img/college.png){fig-align="center"}
+:::
+
+## 
+### College Midwest - Example
+
+- Each simple random sample gave us a different value for the sample mean. 
+Taking 1,000 random samples helps us see the long-run pattern to these statistics. 
+  - In other words, we are approximating the sampling distribution of the sample means.
+
+- Let's see the [applet](https://www.rossmanchance.com/applets/2021/sampling/OneSample.html) to conduct a hypothesis testing
+
+## 
+### Central Limit Theorem fo Sample Means
+
+![](img/theorem.png){fig-align="center"}
+
+
+
+# Confidence Interval for µ
+
+##
+### Introduction
+
+* In previous chapters, we were focusing on inferences about a population proportion (categorical variable).   
+* Now, we will focus on data consisting of __a single quantitative variable__.  
+
+* We will make inferences about a population mean (this is our new parameter now) by creating confidence intervals. 
+
+
+
+
+
+## 
+### Confidence Interval Formula - Revisited
+
+
+The general form of a confidence interval is
+
+$$ 
+\\ statistic \pm multiplier \times (SD \ of \ statistic)
+$$
+
+Here, our statistic will be the sample mean and multiplier will come from _t_-distribution.
+
+$$ 
+\\ \bar{x} \pm t^* \times (s/ \sqrt{n})
+$$
+
+
+# Student's _t_ distribution 
+
+## What is _t_ distribution?
+::: {style="font-size: 28px"}
+
+- $t$-distribution is another bell shape and symmetric distribution that can be useful if we do not know anything about population parameters.
+
+- The $t$-distribution is always centered at zero and has a single parameter: __degrees of freedom__.
+  - The shape of the distribution depends on the degrees of freedom.
+
+- Broadly speaking, we use $t$-distribution with $df = n − 1$
+  - to model the sample mean when the sample size is $n$.
+  - As the $df$ is increasing, the $t$-distribution will look more like __the standard normal distribution__ 
+    - when the $df$ is about 30 or more, the $t$
+-distribution is nearly indistinguishable from the normal distribution.
+
+:::
+
+## What is _t_ distribution?
+::: {style="font-size: 28px"}
+
+```{r}
+library(tidyverse)
+set.seed(123)
+
+# Generate data
+x <- seq(-4, 4, length.out = 1000)
+
+# Create data frame
+df <- data.frame(
+  x = rep(x, 5),
+  y = c(dnorm(x), dt(x, df = 1), dt(x, df = 2), dt(x, df = 4), dt(x, df = 8)),
+  Distribution = rep(c("Normal", "df=1", "df=2", "df=4", "df=8"), each = length(x))
+)
+
+# Plot using ggplot2
+ggplot(df, aes(x, y, color = Distribution, linetype = Distribution)) +
+  geom_line(size = 1) +
+  labs(title = "Some Examples of t-Distributions and the Standard Normal Distribution",
+       x = "Value",
+       y = "Density") +
+  theme_minimal() +
+  scale_color_manual(values = c("Medium Blue", "Magenta", "Dark Orange", "Forest Green", "Black")) +
+  scale_linetype_manual(values = c("dashed", "dashed", "dashed", "dashed", "solid"))
+
+
+```
+
+
+:::
+
+## 
+
+### Comparison of _t_ and the Standard Normal Distribution
+
+::: {style="font-size: 28px"}
+
+- Both are symmetric and bell-shaped but $t$-distribution has a larger standard deviation.
+
+- The $t$-distribution has a single parameter: __degrees of freedom__.
+- Standard Normal Distribution has two parameters: __$\mu$__ and __$\sigma$__.
+
+:::
+
+
+
+# Let's Go Back to Confidence Interval
+
+
+##
+### Monarch Butterflies - Example
+
+::: {.columns}
+::: {.column width="50%"}
+::: {style="font-size: 28px"}
+
+Let's have a look wing areas of 14 male Monarch butterflies at Oceano Dunes State Park in California
+
+
+- $\bar{x} = 32.81$ $cm^2$  and $s= 2.48$ $cm^2$
+
+
+Suppose we consider these 14 observations as a random sample from a population. 
+
+- $\mu$ = the (population) mean wing area of male Monarch butterflies in the Oceano
+Dunes region
+- $\sigma$ = the (population) SD of wing area of male Monarch butterflies in the Oceano
+Dunes region
+
+:::
+:::
+
+::: {.column width="50%"}
+<a title="© Derek Ramsey / derekramsey.com" href="https://commons.wikimedia.org/wiki/File:Monarch_Butterfly_Showy_Male_3000px.jpg"><img width="1024" alt="Monarch Butterfly Showy Male 3000px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Monarch_Butterfly_Showy_Male_3000px.jpg/1024px-Monarch_Butterfly_Showy_Male_3000px.jpg"></a>
+
+
+::: fragment
+::: {style="font-size: 28px"}
+From the sample data we have, we can say that  
+
+- 32.81 is an estimate of __$\mu$__.
+- 2.48 is an estimate of __$\sigma$__.
+:::
+:::
+:::
+:::
+
+
+  
+
+
+##
+### Monarch Butterfly - Example
+
+::: {.columns}
+::: {.column width="50%"}
+::: {style="font-size: 24px"}
+
+Let's have a look wing areas of 14 male Monarch butterflies at Oceano Dunes State Park in California
+
+
+- $\bar{x} = 32.8143 \ cm^2$  and $s= 2.4757 \ cm^2$
+
+
+For the multiplier, it is given as 
+ 
+
+$$
+\\ multiplier = 2.160
+$$
+
+ 
+ 95% confidence interval (CI) for $\mu$ can be calculated as following:
+
+
+- $\bar{x} = 32.8143 \ cm^2$  and $s= 2.4757 \ cm^2$
+
+::: fragment
+$$
+\\95 \% \ CI = (\bar{x} \pm multiplier \ \times \ SE_{\bar{x}})
+\\95 \% \ CI = (32.8143 \pm 2.160 \ \times \ 2.4757 / \sqrt{14})
+$$
+:::
+
+:::
+:::
+
+::: {.column width="50%"}
+<a title="© Derek Ramsey / derekramsey.com" href="https://commons.wikimedia.org/wiki/File:Monarch_Butterfly_Showy_Male_3000px.jpg"><img width="1024" alt="Monarch Butterfly Showy Male 3000px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Monarch_Butterfly_Showy_Male_3000px.jpg/1024px-Monarch_Butterfly_Showy_Male_3000px.jpg"></a>
+
+:::fragment
+::: {style="font-size: 24px"}
+$$
+\\= 32.81 \pm 1.43 
+\\ 31.43 \ cm^2 < \mu < 34.2 \ cm^2
+\\ OR
+\\ 95 \% \ CI = (31.43,34.2)
+$$
+:::
+:::
+:::
+:::
+
+##
+### Monarch Butterfly - Example
+
+::: {.columns}
+::: {.column width="50%"}
+::: {style="font-size: 24px"}
+
+ 90% confidence interval (CI) for $\mu$ can be calculated as following (multiplier:1.771):
+
+
+- $\bar{x} = 32.8143 \ cm^2$  and $s= 2.4757 \ cm^2$
+
+::: fragment
+$$
+\\90 \% \ CI = (\bar{y} \pm multiplier \ \times SE_{\bar{x}})
+\\90 \% \ CI = (32.8143 \pm 1.771 \ \times \ 2.4757 / \sqrt{14})
+$$
+:::
+
+:::fragment
+$$
+\\= 32.81 \pm 1.17 
+\\ 31.64 \ cm^2 < \mu < 33.98 \ cm^2
+$$
+:::
+:::
+:::
+
+
+::: {.column width="50%"}
+<a title="© Derek Ramsey / derekramsey.com" href="https://commons.wikimedia.org/wiki/File:Monarch_Butterfly_Showy_Male_3000px.jpg"><img width="1024" alt="Monarch Butterfly Showy Male 3000px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Monarch_Butterfly_Showy_Male_3000px.jpg/1024px-Monarch_Butterfly_Showy_Male_3000px.jpg"></a>
+
+:::
+:::
+
+::: fragment
+::: {style="font-size: 28px"}
+
+What were the differences between 90% CI and 95% CI?
+
+:::
+:::
+
+
+
+##
+### Confidence Interval - Verbal Explanation
+::: {style="font-size: 32px"}
+
+And...
+
+::: fragment
+
+- If we calculate confidence intervals for each of these 100 samples, we will find that around 95% of these intervals capture the true population mean. 
+
+- We are 95% confident that the true population mean is in this confidence interval.
+
+:::
+:::
+
+
+
+
+# Planning a Study to Estimate μ
+
+## Planning a Study to Estimate μ
+::: {style="font-size: 28px"}
+
+- Before collecting data for a research study, it is wise to consider in advance whether
+the estimates generated from the data will be sufficiently precise. 
+  - It can be painful indeed to discover after a long and expensive study that the standard errors are so large that the primary questions addressed by the study cannot be answered.
+
+- The precision with which a population mean can be estimated is determined by
+two factors: 
+(1) the population variability of the observed variable Y, and 
+(2) the sample size.
+
+:::
+
+## Planning a Study to Estimate μ
+
+::: {style="font-size: 28px"}
+
+- In some situations the variability of Y cannot, and perhaps should not, be reduced. 
+  - For example, a wildlife ecologist may wish to conduct a field study of a natural population of fish; the heterogeneity of the population is not controllable and in fact is a proper subject of investigation.
+
+- On the other hand, it is often appropriate, especially in comparative studies, to
+reduce the variability of Y by holding extraneous conditions as constant as possible.
+  - For example, physiological measurements may be taken at a fixed time of day; tissue
+may be held at a controlled temperature; all animals used in an experiment may be the same age
+
+:::
+
+## What sample size will be needed?
+
+Recall that 
+
+::: fragment
+$$
+SE_{\bar{x}} = \frac{s}{\sqrt{n}}
+$$
+:::
+
+We can use this formula to determine our sample size as follows:
+
+:::fragment
+$$
+Desired \ SE = \frac{Guessed \ SD}{\sqrt{n}}
+$$
+:::
+## 
+### Monarch Butterfly - Example
+
+::: {.columns}
+::: {.column width="50%"}
+::: {style="font-size: 24px"}
+
+
+Suppose the researcher is now planning a new study of butterflies Monarch butterflies at Oceano Dunes State Park in California and has decided that it would be desirable that the SE be no more than $0.4 \ cm^2$
+
+
+- $\bar{y} = 32.8143 \ cm^2$  and $s= 2.4757 \ cm^2$
+
+::: fragment
+$$
+SE_{\bar{y}} = s / \sqrt{n}
+$$
+:::
+
+:::fragment
+$$
+Desired \ SE = Guessed \ SD / \sqrt{n}
+$$
+:::
+
+:::fragment
+$$
+\\Desired \ SE = 2.48 / \sqrt{n} \ \le 0.4
+\\ n\ge 38.4 
+$$
+$$
+\\ at \ least \ 39 \ butterflies
+$$
+
+:::
+
+:::
+:::
+
+
+::: {.column width="50%"}
+::: {style="font-size: 24px"}
+<a title="© Derek Ramsey / derekramsey.com" href="https://commons.wikimedia.org/wiki/File:Monarch_Butterfly_Showy_Male_3000px.jpg"><img width="1024" alt="Monarch Butterfly Showy Male 3000px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Monarch_Butterfly_Showy_Male_3000px.jpg/1024px-Monarch_Butterfly_Showy_Male_3000px.jpg"></a>
+
+- You may wonder how a researcher would arrive at a value such as  $0.4 \ cm^2$ for the
+desired SE. Such a value is determined by considering how much error one is willing
+to tolerate in the estimate of μ.
+
+:::
+:::
+:::
