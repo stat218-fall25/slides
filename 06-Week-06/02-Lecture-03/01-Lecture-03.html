@@ -154,17 +154,17 @@
 <h2>Introduction</h2>
 <div style="font-size: 32px">
 <ul>
-<li>So far, we have interested in the analysis of a single sample of a numeric variable.
+<li class="fragment">So far, we have interested in the analysis of a single sample of a numeric variable.
 <ul>
-<li>In practice, most of the scientific research involves the comparison of 2 or more samples from different populations.</li>
+<li class="fragment">In practice, most of the scientific research involves the comparison of 2 or more samples from different populations.</li>
 </ul></li>
-<li>If the observed variable is quantitative, the comparison of two samples can include
+<li class="fragment">If the observed variable is quantitative, the comparison of two samples can include
 <ol type="1">
-<li>comparison of means,</li>
-<li>comparison of standard deviations</li>
-<li>comparison of shapes.</li>
+<li class="fragment">comparison of means,</li>
+<li class="fragment">comparison of standard deviations</li>
+<li class="fragment">comparison of shapes.</li>
 </ol></li>
-<li>In this week, we will be dealing with the comparison of 2 means</li>
+<li class="fragment">In this week, we will be dealing with the comparison of 2 means</li>
 </ul>
 </div>
 </section>
@@ -173,7 +173,7 @@
 <h3 id="notation">Notation</h3>
 <div style="font-size: 26px">
 <ul>
-<li>We employed a parallel notations but to be able to differentiate two samples from each other, we will use <strong>subscript</strong>.</li>
+<li class="fragment">We employed a parallel notations but to be able to differentiate two samples from each other, we will use <strong>subscript</strong>.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -182,10 +182,10 @@
 </figure>
 </div>
 <ul>
-<li>The two populations that we are interested in can be either
+<li class="fragment">The two populations that we are interested in can be either
 <ul>
-<li>naturally occurring populations (Figure 1) OR</li>
-<li>conceptual populations defined by certain experimental conditions.</li>
+<li class="fragment">naturally occurring populations (Figure 1) OR</li>
+<li class="fragment">conceptual populations defined by certain experimental conditions.</li>
 </ul></li>
 </ul>
 </div>
@@ -264,8 +264,8 @@ SE_{\bar{Y}} = \frac{s}{\sqrt{n}}
 \]</span></p>
 </div>
 <ul>
-<li><p>Naturally, we can say that taking the difference between two sample means is an estimate of the quantity (<span class="math inline">\(\mu_1\)</span> - <span class="math inline">\(\mu_2\)</span>).</p></li>
-<li><p>However, the formula for the standard error of the difference (<span class="math inline">\(\bar{Y}_1\)</span> - <span class="math inline">\(\bar{Y}_2\)</span>) is a little different from what we initially thought.</p></li>
+<li class="fragment"><p>Naturally, we can say that taking the difference between two sample means is an estimate of the quantity (<span class="math inline">\(\mu_1\)</span> - <span class="math inline">\(\mu_2\)</span>).</p></li>
+<li class="fragment"><p>However, the formula for the standard error of the difference (<span class="math inline">\(\bar{Y}_1\)</span> - <span class="math inline">\(\bar{Y}_2\)</span>) is a little different from what we initially thought.</p></li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
@@ -300,9 +300,9 @@ SE_{\bar{Y}_1 - \bar{Y}_2} = \sqrt{ \frac {4.8^2}{8} + \frac {4.7^2}{7}} = 2.46
 \]</span></p>
 </div>
 <ul>
-<li><p>In our hypothetical example, we calculated 95% CI and we found it as (-0.42,10.22)</p>
+<li class="fragment"><p>In our hypothetical example, we calculated 95% CI and we found it as (-0.42,10.22)</p>
 <ul>
-<li>We are 95% confident that the population average 14-day height of fast plants when water is used (<span class="math inline">\(\mu_1\)</span>) is between 0.4 cm lower and 10.2 cm higher than the average</li>
+<li class="fragment">We are 95% confident that the population average 14-day height of fast plants when water is used (<span class="math inline">\(\mu_1\)</span>) is between 0.4 cm lower and 10.2 cm higher than the average</li>
 </ul></li>
 </ul>
 </div>
@@ -313,7 +313,7 @@ SE_{\bar{Y}_1 - \bar{Y}_2} = \sqrt{ \frac {4.8^2}{8} + \frac {4.7^2}{7}} = 2.46
 <div style="font-size: 30px">
 <p><br></p>
 <ul>
-<li>Test statistic is a measure of how far the difference between the sample means (<span class="math inline">\(\bar{y}\)</span>’s) is from the difference we would expect to see if <span class="math inline">\(H_0\)</span> were true (zero difference), <strong>the amount of variation we expect to see</strong> in differences of means from random samples.</li>
+<li class="fragment">Test statistic is a measure of how far the difference between the sample means (<span class="math inline">\(\bar{y}\)</span>’s) is from the difference we would expect to see if <span class="math inline">\(H_0\)</span> were true (zero difference), <strong>the amount of variation we expect to see</strong> in differences of means from random samples.</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
@@ -354,18 +354,18 @@ test \ statistic = \frac{(\bar{y}_1 - \bar{y}_2) - (\mu_1 - \mu_2)}{SE(\bar{y}_1
 <h2>But…</h2>
 <div style="font-size: 28px">
 <ul>
-<li><p>Ancymidol is known as a plant growth regulator that reduces plant growth by inhibiting gibberellin biosynthesis.</p></li>
-<li><p>In our hypothetical example, we calculated 95% CI and we found it as (-0.4,10.2)</p>
+<li class="fragment"><p>Ancymidol is known as a plant growth regulator that reduces plant growth by inhibiting gibberellin biosynthesis.</p></li>
+<li class="fragment"><p>In our hypothetical example, we calculated 95% CI and we found it as (-0.4,10.2)</p>
 <ul>
-<li>We are 95% confident that the population average 14-day height of fast plants when water is used (<span class="math inline">\(\mu_1\)</span>) is between 0.4 cm lower and 10.2 cm higher than the average 14-day height of fast plants when <a href="https://www3.epa.gov/pesticides/chem_search/reg_actions/reregistration/fs_PC-108601_1-Jun-95.pdf">Ancymidol</a> is used (<span class="math inline">\(\mu_2\)</span>).</li>
+<li class="fragment">We are 95% confident that the population average 14-day height of fast plants when water is used (<span class="math inline">\(\mu_1\)</span>) is between 0.4 cm lower and 10.2 cm higher than the average 14-day height of fast plants when <a href="https://www3.epa.gov/pesticides/chem_search/reg_actions/reregistration/fs_PC-108601_1-Jun-95.pdf">Ancymidol</a> is used (<span class="math inline">\(\mu_2\)</span>).</li>
 </ul></li>
 </ul>
 <div class="fragment">
 <p>Is it reasonable to believe that the substance may affect plant growth? Discuss with your neighbor</p>
 </div>
 <ul>
-<li><a href="https://academic.oup.com/plphys/article/57/4/640/6074930">A paper on Effects of Ancymidol from 1976</a></li>
-<li><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Ancymidol">National Library of Medicine</a></li>
+<li class="fragment"><a href="https://academic.oup.com/plphys/article/57/4/640/6074930">A paper on Effects of Ancymidol from 1976</a></li>
+<li class="fragment"><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Ancymidol">National Library of Medicine</a></li>
 </ul>
 </div>
 </section></section>
@@ -396,9 +396,9 @@ test \ statistic = \frac{(\bar{y}_1 - \bar{y}_2) - (\mu_1 - \mu_2)}{SE(\bar{y}_1
 </div>
 </div>
 <ul>
-<li><p>If <span class="math inline">\(H_A\)</span> is true, but we do not observe sufficient evidence to support <span class="math inline">\(H_A\)</span>, then we have made a Type II error.</p>
+<li class="fragment"><p>If <span class="math inline">\(H_A\)</span> is true, but we do not observe sufficient evidence to support <span class="math inline">\(H_A\)</span>, then we have made a Type II error.</p>
 <ul>
-<li>We might have committed to Type II Error in Ancymidol example.</li>
+<li class="fragment">We might have committed to Type II Error in Ancymidol example.</li>
 </ul></li>
 </ul>
 </div>
@@ -450,11 +450,11 @@ test \ statistic = \frac{(\bar{y}_1 - \bar{y}_2) - (\mu_1 - \mu_2)}{SE(\bar{y}_1
 <section id="type-i-error-vs-type-ii-error" class="slide level2">
 <h2>Type I Error vs Type II Error</h2>
 <ul>
-<li>Table 7.3.2 displays the situations in which Type I and Type II errors can occur.</li>
+<li class="fragment">Table 7.3.2 displays the situations in which Type I and Type II errors can occur.</li>
 </ul>
 
 <img data-src="img/type-1-2-table.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"><ul>
-<li>For example, if we find significant evidence for <span class="math inline">\(H_A\)</span>, then we eliminate the possibility of a Type II error, but by rejecting <span class="math inline">\(H_0\)</span> we may have made a Type I error.</li>
+<li class="fragment">For example, if we find significant evidence for <span class="math inline">\(H_A\)</span>, then we eliminate the possibility of a Type II error, but by rejecting <span class="math inline">\(H_0\)</span> we may have made a Type I error.</li>
 </ul>
 </section>
 <section id="type-i-error-vs-type-ii-error-1" class="slide level2">

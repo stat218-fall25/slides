@@ -1,0 +1,214 @@
+---
+title: "STAT 218 Lab Assignment 4"
+subtitle: "Week 6 Lecture 4 Lab 4"
+author: 
+  - "Team Member 1: NAME HERE"
+  - "Team Member 2: NAME HERE"
+  - "Team Member 3: NAME HERE"
+date: today
+date-format: "MMMM D[<sup style='font-size:65%;'>th</sup>], YYYY"
+format: pdf
+execute:
+  echo: true
+---
+
+## Lab Assignment 4
+
+Please run the code chunk below to download the necessary package you need.
+
+
+```{r}
+#| include: false
+install.packages("infer" , repos = "http://cran.us.r-project.org")
+```
+
+
+Remember, we need to use library functions to be able to tell R which package we want to use right now. Please run the code chunk below too.
+
+```{r}
+#| output: false
+library(infer)
+library(tidyverse)
+library(palmerpenguins)
+data("penguins") 
+```
+
+__NOTE:__ Please ignore `penguins_raw` data for this class and USE `penguins` for this assignment.
+
+
+
+# One Sample _t_ test
+
+In this case, we will use `penguins` data set.
+  
+__Example of a Case:__ Imagine that you are a biologist studying penguins, particularly their bill lengths. You hypothesize that the average bill length of penguins is 40 mm and you collect a random sample of 344 penguins, measure and record their bill length in mm.
+
+
+
+__Question 1. What is the research question of this study?__
+
+
+Type your answer here.
+
+
+__Question 2. What type of variable do we have in this study?__
+
+
+Type your answer here.
+
+
+__Question 3. Check the lecture slides and please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
+
+
+_Random Sampling:_ Explain here.
+
+
+_Independence of Observation:_ Explain here.
+
+
+_Normal Distribution:_ Explain here.
+
+
+
+```{r}
+# Type your codes here to check normality by using histogram. Find ggplot codes from our previous data viz lab slides for creating a HISTOGRAM.
+```
+
+Interpret your histogram here.
+
+
+
+- _This code is for normal quantile plot._
+
+```{r}
+ggplot(data = na.omit(penguins),
+       aes(sample = bill_length_mm)) +
+  geom_qq()
+```
+
+
+
+Interpret the assumptions overall and type your reasoning.
+
+
+__Directions for Question 4: Conduct a one sample $t$-test to investigate whether the bill length of the penguins differs from the test value of 40 mm. Answer the questions given below.__
+
+
+__Question 4.1 Write out the null & the alternative hypotheses within the context of this study:__
+
+
+Type your answer here.
+
+
+
+
+__Question 4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
+
+```{r}
+t_test(penguins, response = bill_length_mm, mu = 40)
+
+```
+
+Type your answer here.
+
+
+__Question 4.3. Draw conclusion and write a conclusion statement.Include p-value and confidence interval.__
+
+
+Type your answer here.
+
+
+
+# Independent Samples _t_ test
+
+In this case, we will use again `penguins` data set.
+  
+__Example of a Case:__ Now, you're curious about the difference in the body mass of penguins based on their sex. You hypothesize that body mass varies between different sexes. To test your hypothesis, you collect a random sample of 344 penguins, measure their body mass, and record their sex.
+
+
+__Question 1. What is the research question of this study?__
+
+
+Type your answer here.
+
+
+__Question 2. What type of variables do we have in this study?__
+
+
+Type your answer here.
+
+
+__Question 3. Again check the lecture slides and please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
+
+_Random Sampling:_ Explain here.
+
+_Independence of Observation:_ Explain here.
+
+_Normal Distribution:_ Explain here.
+
+
+```{r}
+# Type your codes here to check normality by using histogram. You can add facet_wrap(~sex) to see two histograms
+```
+
+
+- _This code is for normal quantile plot for both sexes._
+
+```{r}
+ggplot(data = na.omit(penguins),
+       aes(sample = body_mass_g)) +
+  geom_qq() +
+  facet_wrap(~sex)
+
+```
+
+
+
+Interpret the assumptions and type your reasoning.
+
+
+
+
+__Directions for Question 4: Conduct an independent samples $t$-test to investigate whether the body mass of penguins differs between different sexes.__
+
+
+__Question 4.1 Write out the null & the alternative hypotheses within the context of this study:__
+
+Type your answer here.
+
+
+
+__Question 4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
+
+```{r}
+t_test(x = penguins, 
+       formula = body_mass_g ~ sex, 
+       order = c("male", "female"),
+       alternative = "two-sided",
+       conf_level = 0.90)
+```
+
+
+
+Type your answer here.
+
+
+__Question 4.3. Explain what each function/argument does in this question.__
+
+`t_test`: Type your answer here.
+
+`formula`:Type your answer here.
+
+`order`: Type your answer here.
+
+`alternative`: Type your answer here.
+
+`conf.level`: Type your answer here.
+
+
+__Question 4.4. Draw conclusion and write a conclusion statement. Include p-value and confidence interval interpretations.__
+
+
+Type your answer here.
+
+
