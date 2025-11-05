@@ -1,6 +1,6 @@
 ---
-title: "STAT 218 Lab Assignment 4"
-subtitle: "Week 6 Lecture 4 Lab 4"
+title: "STAT 218 Lab Assignment 3"
+subtitle: "Week 6 Lecture 4 Lab 3"
 author: 
   - "Team Member 1: NAME HERE"
   - "Team Member 2: NAME HERE"
@@ -12,7 +12,7 @@ execute:
   echo: true
 ---
 
-## Lab Assignment 4
+## Lab Assignment 3
 
 Please run the code chunk below to download the necessary package you need.
 
@@ -41,23 +41,23 @@ __NOTE:__ Please ignore `penguins_raw` data for this class and USE `penguins` fo
 
 In this case, we will use `penguins` data set.
   
-__Example of a Case:__ Imagine that you are a biologist studying penguins, particularly their bill lengths. You hypothesize that the average bill length of penguins is 40 mm and you collect a random sample of 344 penguins, measure and record their bill length in mm.
+__Example 1:__ Imagine that you are a biologist studying penguins, particularly their bill lengths. You hypothesize that the average bill length of penguins is 40 mm and you collect a random sample of 344 penguins, measure and record their bill length in mm.
 
 
 
-__Question 1. What is the research question of this study?__
-
-
-Type your answer here.
-
-
-__Question 2. What type of variable do we have in this study?__
+__Question 1.1. What is the research question of this study?__
 
 
 Type your answer here.
 
 
-__Question 3. Check the lecture slides and please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
+__Question 1.2. What type of variable do we have in this study?__
+
+
+Type your answer here.
+
+
+__Question 1.3. Check the lecture slides and please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
 
 
 _Random Sampling:_ Explain here.
@@ -91,10 +91,10 @@ ggplot(data = na.omit(penguins),
 Interpret the assumptions overall and type your reasoning.
 
 
-__Directions for Question 4: Conduct a one sample $t$-test to investigate whether the bill length of the penguins differs from the test value of 40 mm. Answer the questions given below.__
+__Directions for Question 1.4: Conduct a one sample $t$-test to investigate whether the bill length of the penguins differs from the test value of 40 mm. Answer the questions given below.__
 
 
-__Question 4.1 Write out the null & the alternative hypotheses within the context of this study:__
+__Question 1.4.1 Write out the null & the alternative hypotheses within the context of this study:__
 
 
 Type your answer here.
@@ -102,7 +102,7 @@ Type your answer here.
 
 
 
-__Question 4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
+__Question 1.4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
 
 ```{r}
 t_test(penguins, response = bill_length_mm, mu = 40)
@@ -112,7 +112,7 @@ t_test(penguins, response = bill_length_mm, mu = 40)
 Type your answer here.
 
 
-__Question 4.3. Draw conclusion and write a conclusion statement.Include p-value and confidence interval.__
+__Question 1.4.3. Draw conclusion and write a conclusion statement.Include p-value and confidence interval.__
 
 
 Type your answer here.
@@ -123,22 +123,22 @@ Type your answer here.
 
 In this case, we will use again `penguins` data set.
   
-__Example of a Case:__ Now, you're curious about the difference in the body mass of penguins based on their sex. You hypothesize that body mass varies between different sexes. To test your hypothesis, you collect a random sample of 344 penguins, measure their body mass, and record their sex.
+__Example 2:__ Now, you're curious about the difference in the body mass of penguins based on their sex. You hypothesize that body mass varies between different sexes. To test your hypothesis, you collect a random sample of 344 penguins, measure their body mass, and record their sex.
 
 
-__Question 1. What is the research question of this study?__
-
-
-Type your answer here.
-
-
-__Question 2. What type of variables do we have in this study?__
+__Question 2.1. What is the research question of this study?__
 
 
 Type your answer here.
 
 
-__Question 3. Again check the lecture slides and please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
+__Question 2.2. What type of variables do we have in this study?__
+
+
+Type your answer here.
+
+
+__Question 2.3. Again check the lecture slides and please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
 
 _Random Sampling:_ Explain here.
 
@@ -169,16 +169,16 @@ Interpret the assumptions and type your reasoning.
 
 
 
-__Directions for Question 4: Conduct an independent samples $t$-test to investigate whether the body mass of penguins differs between different sexes.__
+__Directions for Question 2.4: Conduct an independent samples $t$-test to investigate whether the body mass of penguins differs between different sexes.__
 
 
-__Question 4.1 Write out the null & the alternative hypotheses within the context of this study:__
+__Question 2.4.1 Write out the null & the alternative hypotheses within the context of this study:__
 
 Type your answer here.
 
 
 
-__Question 4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
+__Question 2.4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
 
 ```{r}
 t_test(x = penguins, 
@@ -193,7 +193,7 @@ t_test(x = penguins,
 Type your answer here.
 
 
-__Question 4.3. Explain what each function/argument does in this question.__
+__Question 2.4.3. Explain what each function/argument does in this question.__
 
 `t_test`: Type your answer here.
 
@@ -206,7 +206,7 @@ __Question 4.3. Explain what each function/argument does in this question.__
 `conf.level`: Type your answer here.
 
 
-__Question 4.4. Draw conclusion and write a conclusion statement. Include p-value and confidence interval interpretations.__
+__Question 2.4.4. Draw conclusion and write a conclusion statement. Include p-value and confidence interval interpretations.__
 
 
 Type your answer here.

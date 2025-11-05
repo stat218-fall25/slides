@@ -1,0 +1,126 @@
+---
+title: "STAT 218 Lab Assignment 4"
+subtitle: "Week 6 Lecture 4 Lab 4"
+author: 
+  - "Team Member 1: NAME HERE"
+  - "Team Member 2: NAME HERE"
+  - "Team Member 3: NAME HERE"
+date: today
+date-format: "MMMM D[<sup style='font-size:65%;'>th</sup>], YYYY"
+format: pdf
+execute:
+  echo: true
+---
+
+## Lab Assignment 4
+
+In this assignment, we will work with an external data set. Make sure download the dataset (Example 8.3.4.csv) from Canvas as well.
+
+
+Let's use `library` function and load the data sets that we will use today.
+
+```{r}
+#| output: false
+library(tidyverse)
+stream <- read_csv("stream.csv")
+```
+
+
+# Paired Samples _t_ test
+
+__Example of a Case:__ Pollutants in a stream may accumulate or attenuate as water flows down the stream. In a study to monitor the accumulation and attenuation of fecal contamination in a stream running through cattle rangeland, monthly water specimens were collected at two locations along the stream over a period of 21 months.
+
+The data set `stream` the total coliform count (MPN/100ml) for a water specimen.
+
+__Question 1. What is the research question of this study?__
+
+
+Type your answer here.
+
+
+__Question 2. What type of variables do we have in this data set? Quantitative or categorical?__
+
+
+_sample:_
+
+_date:_
+
+_upstream:_
+
+_downstream:_
+
+_difference:_
+
+
+__Question 3. Please list the assumptions required for this test and check the assumption of normality for this study. Interpret the assumptions overall.__
+
+
+_Random Sampling:_ Explain here.
+
+_Independence of Observation:_ Explain here.
+
+_Normal Distribution:_ Explain here.
+
+
+- _This output is from a calculation of Shapiro-Wilk test. We generally use Shapiro-Wilk test for relatively smaller sample size because visuals can be misleading in smaller sample sizes. Please interpret Shapiro-Wilk $p$-value._
+
+
+	Shapiro-Wilk normality test
+
+data:  stream$Difference
+W = 0.9641, p-value = 0.6022
+
+
+
+Type your answer here.
+
+
+__Directions of Question 4: Perform a paired sample $t$-test to assess whether the mean total coliform count is consistent across the two locations.__
+
+
+
+__Question 4.1 Write out the null & the alternative hypotheses within the context of this study:__
+
+Type your answer here.
+
+
+
+__Question 4.2. Compute test statistic by running the code chuck below and explain what you see in the output.__
+
+```{r}
+t.test(stream$upstream, stream$downstream, paired = TRUE)
+```
+
+
+Type your answer here.
+
+
+__Question 4.3: Run the code chuck below again and explain what you see in the output.__
+
+```{r}
+
+t.test(stream$difference, mu = 0)
+
+```
+
+Type your answer here.
+
+
+__Question 4.4. Compare and contrast how the codes in Question 4.2 and Question 4.3 work. Comment on the p-value, test statistic, and confidence interval. If they produce the same results, explain what the two codes did differently.__
+
+
+Type your answer here.
+
+
+__Question 4.5. Draw conclusion and write a conclusion statement.__
+
+
+Type your answer here. Comment on p-vale and confidence interval.
+
+
+
+
+
+
+
+
