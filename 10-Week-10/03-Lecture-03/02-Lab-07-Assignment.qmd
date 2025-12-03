@@ -1,0 +1,254 @@
+---
+title: " Correlation and Least Squares Regression"
+subtitle: "Week 10 Lecture 3 Lab 6"
+author: 
+  - "Team Member 1: NAME HERE"
+  - "Team Member 2: NAME HERE"
+  - "Team Member 3: NAME HERE"
+date: today
+date-format: "MMMM D[<sup style='font-size:65%;'>th</sup>], YYYY"
+format: pdf
+execute:
+  echo: true
+---
+
+
+# Correlation
+
+
+Please run the code chunk below and load your data set as well as utilizing `library()` functions that you need.
+
+
+```{r}
+#| warning: false
+library(openintro)
+library(tidyverse)
+data("babies")
+glimpse(babies)
+```
+
+
+__Question 1: Please explain what you see in this dataset.__
+
+
+
+## Calculate Correlation Coefficient
+
+
+
+__Question 2: Please run the code chunk below and comment on the correlation coefficient.__
+
+
+```{r}
+cor(babies$gestation, babies$bwt, use = "na.or.complete")
+```
+
+
+__Question 3: Let’s examine scatterplot to look for potential outliers. Do we have potential outliers in this scatterplot?__ 
+
+
+```{r}
+ggplot(na.omit(babies), aes(x = gestation, y = bwt)) +
+  geom_point() +
+  labs(x = "Gestation", y = "Birth Weight")
+```
+
+
+
+
+## Scatterplot - 1
+
+We see two potential outliers on the left-hand side of the scatterplot. Let’s find them and remove these outliers. (Run the code chunk below.)
+
+
+```{r}
+babies1 <- babies %>%
+  filter(case != 261 & case != 870 & case !=979) # this removes three outliers whose case numbers are 261, 870 & 979. Where did I find these case numbers?
+```
+
+
+
+__Question 4: Let’s check the correlation coefficient and scatterplot again. Interpret the outputs.__
+
+
+```{r}
+cor(babies1$gestation, babies1$bwt, use = "na.or.complete")
+```
+
+
+
+```{r}
+ggplot(na.omit(babies1), aes(x = gestation, y = bwt)) +
+  geom_point() +
+  labs(x = "Gestation", y = "Birth Weight")
+```
+
+__Question 5: Do we still have potential outliers in this scatterplot given above?__ 
+
+
+
+
+
+## Scatterplot - 2
+
+
+We see some other potential outliers on the right-hand side of the scatterplot. Let’s remove those as well.
+
+```{r}
+babies2 <- babies1 %>%
+  filter(case != 1173 & case != 11 & case != 1200 & case != 153 & case != 762 & case != 970 & case != 241 & case != 254  & case != 1003 & case != 461  & case != 1045 & case != 1220)
+```
+
+
+__Question 6: Let’s check the correlation coefficient and scatterplot again. Interpret the outputs.__
+
+
+```{r}
+cor(babies2$gestation, babies2$bwt, use = "na.or.complete")
+```
+
+```{r}
+ggplot(na.omit(babies2), aes(x = gestation, y = bwt)) +
+  geom_point() +
+  labs(x = "Gestation", y = "Birth Weight")
+```
+
+
+__Question 7. Compare 3 correlation coefficients and 3 scatterplots. Interpret these potential outliers, considering whether they are influential observations.__
+
+Type your answer here.
+
+
+__Question 8. What is your final conclusion? Do you delete those outliers or not? Explain your reasoning.__
+
+Type your answer here.
+
+
+# Bivariate Regression
+
+__Understanding Birth Weight and Gestation: A Least Squares Regression Analysis__
+
+In the area of prenatal care and childbirth, understanding the relationship between gestation period and birth weight is crucial. We often speculate about how the duration of pregnancy might be related to the weight of a newborn.
+
+In the `babies` dataset, each observation includes information about gestation period and birth weight. We want to investigate if there’s a linear association between these two variables.
+
+
+## Steps for Conducting Hypothesis Testing for This Test
+
+### Step 1. Formulate Hypotheses
+
+__Question 4. Write out the null & the alternative hypothesis in words, in the context of this study:__
+
+Type here.
+
+
+### Step 2: Generate Your Model
+
+__IMPORTANT:__ The codes below use the `babies` dataset. If you chose a different dataset, such as `babies1` or `babies2`(see your environment pane), be sure to replace `babies` with the correct dataset name in all instances.
+
+__Question 5. Run the code chunk below and explain what each function/argument does.__
+
+```{r}
+fit <- lm(babies$bwt ~ babies$gestation)
+summary(fit)
+```
+
+__Question 11. List the conditions/assumptions for this study.__
+
+Type your answer here. 
+
+
+### Step 3.1 Checking Conditions/Assumptions 
+
+
+__Linearity with Scatterplot__
+
+
+```{r}
+ggplot(na.omit(babies), aes(x = gestation, y = bwt)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Scatterplot with Best-Fit Line",
+       x = "Gestation",
+       y = "Birth Weight")
+```
+
+
+__Linearity with Residuals Plot__
+
+
+```{r}
+# get list of residuals  
+res <- resid(fit) 
+res.stdres <- rstandard(fit) # standardized residuals
+
+# produce residual vs. fitted plot 
+ggplot(data.frame(fitted = fitted(fit), stdres = res.stdres), 
+       aes(x = fitted, y = stdres)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "solid", color = "red") +
+  labs(title = "Fitted Values vs. Standardized Residuals",
+       x = "Fitted Values",
+       y = "Standardized Residuals") +
+  theme_minimal()
+```
+
+
+
+Type your interpretation here.
+
+
+### Step 3.2. Checking Conditions/Assumptions - Normality
+
+
+```{r}
+# create Q-Q plot for residuals 
+qqnorm(res.stdres) # by using standardized residuals
+  
+# add a straight diagonal line to the plot 
+qqline(res.stdres)
+```
+
+
+Type your interpretation here.
+
+
+### Step 3.3. Checking Conditions/Assumptions - Homoscedasticity
+
+
+```{r}
+# get list of residuals  
+res <- resid(fit) 
+res.stdres <- rstandard(fit) # standardized residuals
+
+# produce residual vs. fitted plot 
+ggplot(data.frame(fitted = fitted(fit), stdres = res.stdres), 
+       aes(x = fitted, y = stdres)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "solid", color = "red") +  # Add a horizontal line at 0
+  labs(title = "Fitted Values vs. Standardized Residuals",
+       x = "Fitted Values",
+       y = "Standardized Residuals")
+```
+
+
+Type your overall interpretation here. Did we meet all the conditions/assumptions?
+
+
+
+### Draw conclusion
+
+__Question 12. Re-run the code chunk below. Interpret Estimate, p-value of the slope, and Adjusted R-Squared.__
+
+
+```{r}
+fit <- lm(babies$bwt ~ babies$gestation)
+summary(fit)
+```
+
+
+
+__Conclusion Statement:__
+
+
+__Question 13. Type the regression equation and interpret the slope.__
