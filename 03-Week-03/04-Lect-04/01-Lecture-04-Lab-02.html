@@ -6,8 +6,8 @@
 <script src="01-Lecture-04-Lab-02_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="01-Lecture-04-Lab-02_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="01-Lecture-04-Lab-02_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="01-Lecture-04-Lab-02_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="01-Lecture-04-Lab-02_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
 
   <title>Chapter 2: Description of Samples and Populations &amp; More on Data Visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="01-Lecture-04-Lab-02_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="01-Lecture-04-Lab-02_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -94,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="01-Lecture-04-Lab-02_files/libs/revealjs/dist/theme/quarto-62e86f533d3e432d2f699e8b2329d4f4.css">
+  <link rel="stylesheet" href="01-Lecture-04-Lab-02_files/libs/revealjs/dist/theme/quarto-25245652c4f2914392c938dc59d6c345.css">
   <link href="01-Lecture-04-Lab-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="01-Lecture-04-Lab-02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="01-Lecture-04-Lab-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,7 +198,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Chapter 2: Description of Samples and Populations &amp; More on Data Visualization</h1>
-  <p class="subtitle">STAT 218 - Week 3, Lecture 4</p>
+  <p class="subtitle">STAT 218 - Lab 2</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -231,9 +234,9 @@
 <div style="font-size: 30px">
 <ul>
 <li>Visualizing a Single Categorical Variable</li>
-<li>Visualizing a Single Numeric Variable</li>
-<li>Visualizing One Categorical and One Numeric Variable</li>
-<li>Visualizing Two Numeric Variables</li>
+<li>Visualizing a Single Quantitative Variable</li>
+<li>Visualizing One Categorical and One Quantitative Variable</li>
+<li>Visualizing Two Quantitative Variables</li>
 <li>Visualizing More than Two Variables</li>
 </ul>
 </div>
@@ -331,10 +334,10 @@
 <div style="font-size: 30px">
 <p>Let’s use our <code>library()</code>, <code>data()</code>, and <code>glimpse()</code>function to start.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(openintro)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(openintro)</span>
 <span id="cb1-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href=""></a><span class="fu">data</span>(babies)</span>
-<span id="cb1-4"><a href=""></a><span class="fu">glimpse</span>(babies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href=""></a><span class="fu">glimpse</span>(babies)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -369,7 +372,7 @@
 <p>Let’s use <code>smoke</code> variable within <code>babies</code> dataset which is a categorical variable indicating whether the mother smokes or not.</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -386,8 +389,8 @@
 <p>Let’s use <code>smoke</code> variable within <code>babies</code>dataset which is a categorical variable indicating whether the mother smokes or not.</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
-<span id="cb3-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> smoke)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<span id="cb3-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> smoke)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -404,9 +407,9 @@
 <p>Let’s use <code>smoke</code> variable within <code>babies</code>dataset which is a categorical variable indicating whether the mother smokes or not.</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies, </span>
 <span id="cb4-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> smoke)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -444,27 +447,27 @@
 <div id="tabset-1-3">
 <p><br> <br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies, </span>
 <span id="cb5-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> smoke)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="visualizing-a-single-numeric-variable" class="title-slide slide level1 center">
-<h1>Visualizing a Single Numeric Variable</h1>
+<section id="visualizing-a-single-quantitative-variable" class="title-slide slide level1 center">
+<h1>Visualizing a Single Quantitative Variable</h1>
 
 </section>
 <section id="histogram" class="slide level2">
 <h2>Histogram</h2>
-<p>Let’s use <code>bwt</code> variable which is a numeric variable indicating birth weight in ounces</p>
+<p>Let’s use <code>bwt</code> variable which is a quantitative variable indicating birth weight in ounces</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb6-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> bwt)) <span class="sc">+</span></span>
-<span id="cb6-3"><a href=""></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href=""></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -477,12 +480,12 @@
 </section>
 <section id="histogram-1" class="slide level2">
 <h2>Histogram</h2>
-<p>Let’s use <code>bwt</code> variable which is a numeric variable indicating birth weight in ounces</p>
+<p>Let’s use <code>bwt</code> variable which is a quantitative variable indicating birth weight in ounces</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb7-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> bwt)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -495,13 +498,13 @@
 </section>
 <section id="a-colorful-histogram" class="slide level2">
 <h2>A Colorful Histogram</h2>
-<p>Let’s use <code>bwt</code> variable which is a numeric variable indicating birth weight in ounces</p>
+<p>Let’s use <code>bwt</code> variable which is a quantitative variable indicating birth weight in ounces</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb8-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> bwt)) <span class="sc">+</span></span>
 <span id="cb8-3"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>, </span>
-<span id="cb8-4"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"seagreen2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"seagreen2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -514,14 +517,14 @@
 </section>
 <section id="a-colorful-histogram-1" class="slide level2">
 <h2>A Colorful Histogram</h2>
-<p>Let’s use <code>bwt</code> variable which is a numeric variable indicating birth weight in ounces</p>
+<p>Let’s use <code>bwt</code> variable which is a quantitative variable indicating birth weight in ounces</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb9-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> bwt)) <span class="sc">+</span></span>
 <span id="cb9-3"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>, </span>
 <span id="cb9-4"><a href=""></a>                 <span class="at">color =</span> <span class="st">"white"</span>, </span>
-<span id="cb9-5"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"maroon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"maroon"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -550,11 +553,11 @@
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb10-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> bwt)) <span class="sc">+</span></span>
 <span id="cb10-3"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>, </span>
 <span id="cb10-4"><a href=""></a>                 <span class="at">color =</span> <span class="st">"white"</span>, </span>
-<span id="cb10-5"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"maroon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"maroon"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-3">
@@ -624,18 +627,18 @@
 </div>
 </section></section>
 <section>
-<section id="visualizing-one-categorical-and-one-numeric-variable" class="title-slide slide level1 center">
-<h1>Visualizing One Categorical and One Numeric Variable</h1>
+<section id="visualizing-a-categorical-and-a-quantitative-variable" class="title-slide slide level1 center">
+<h1>Visualizing A Categorical and A Quantitative Variable</h1>
 
 </section>
 <section id="boxplot" class="slide level2">
 <h2>Boxplot</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">na.omit</span>(babies),</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">na.omit</span>(babies),</span>
 <span id="cb11-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> smoke,</span>
 <span id="cb11-3"><a href=""></a>           <span class="at">y =</span> bwt))  <span class="sc">+</span></span>
-<span id="cb11-4"><a href=""></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href=""></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -645,25 +648,25 @@
 </div>
 </div>
 </div></div>
-<p>We are visualizing a single numerical and single categorical variable by using <code>geom_boxplot</code></p>
+<p>We are visualizing a single quantitative and single categorical variable by using <code>geom_boxplot</code></p>
 </section>
 <section id="anatomy-of-a-boxplot" class="slide level2">
 <h2>Anatomy of A Boxplot</h2>
 
 <img data-src="img/boxplot.png" class="r-stretch"></section></section>
 <section>
-<section id="visualizing-two-numerical-variables" class="title-slide slide level1 center">
-<h1>Visualizing Two Numerical Variables</h1>
+<section id="visualizing-two-quantitative-variables" class="title-slide slide level1 center">
+<h1>Visualizing Two Quantitative Variables</h1>
 
 </section>
 <section id="scatterplot" class="slide level2">
 <h2>Scatterplot</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb12-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb12-3"><a href=""></a>           <span class="at">y =</span> bwt))  <span class="sc">+</span></span>
-<span id="cb12-4"><a href=""></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href=""></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -683,11 +686,11 @@
 <h2>Let’s Try This</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb13-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb13-3"><a href=""></a>           <span class="at">y =</span> bwt,</span>
 <span id="cb13-4"><a href=""></a>           <span class="at">color =</span> smoke)) <span class="sc">+</span></span>
-<span id="cb13-5"><a href=""></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-5"><a href=""></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -703,11 +706,11 @@
 <h2>And Then…</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb14-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb14-3"><a href=""></a>           <span class="at">y =</span> bwt,</span>
 <span id="cb14-4"><a href=""></a>           <span class="at">shape =</span> smoke)) <span class="sc">+</span></span>
-<span id="cb14-5"><a href=""></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-5"><a href=""></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -723,12 +726,12 @@
 <h2>And Then…</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb15-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb15-3"><a href=""></a>           <span class="at">y =</span> bwt,</span>
 <span id="cb15-4"><a href=""></a>           <span class="at">shape =</span> smoke,</span>
 <span id="cb15-5"><a href=""></a>           <span class="at">color =</span> smoke)) <span class="sc">+</span></span>
-<span id="cb15-6"><a href=""></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a href=""></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -744,7 +747,7 @@
 <h2>More on ggplot</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb16-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb16-3"><a href=""></a>           <span class="at">y =</span> bwt,</span>
 <span id="cb16-4"><a href=""></a>           <span class="at">shape =</span> smoke,</span>
@@ -752,7 +755,7 @@
 <span id="cb16-6"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb16-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length of Gestation (days)"</span>,</span>
 <span id="cb16-8"><a href=""></a>       <span class="at">y =</span> <span class="st">"Birth Weight"</span>,</span>
-<span id="cb16-9"><a href=""></a>       <span class="at">title =</span> <span class="st">"Babies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-9"><a href=""></a>       <span class="at">title =</span> <span class="st">"Babies"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -768,7 +771,7 @@
 <h2>And then…</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> babies,</span>
 <span id="cb17-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb17-3"><a href=""></a>           <span class="at">y =</span> bwt,</span>
 <span id="cb17-4"><a href=""></a>           <span class="at">shape =</span> smoke,</span>
@@ -777,7 +780,7 @@
 <span id="cb17-7"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length of Gestation (days)"</span>,</span>
 <span id="cb17-8"><a href=""></a>       <span class="at">y =</span> <span class="st">"Birth Weight"</span>,</span>
 <span id="cb17-9"><a href=""></a>       <span class="at">title =</span> <span class="st">"Babies"</span>) <span class="sc">+</span></span>
-<span id="cb17-10"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-10"><a href=""></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -793,7 +796,7 @@
 <h2>And then…</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">na.omit</span>(babies),</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">na.omit</span>(babies),</span>
 <span id="cb18-2"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> gestation,</span>
 <span id="cb18-3"><a href=""></a>           <span class="at">y =</span> bwt,</span>
 <span id="cb18-4"><a href=""></a>           <span class="at">shape =</span> smoke,</span>
@@ -803,7 +806,7 @@
 <span id="cb18-8"><a href=""></a>       <span class="at">y =</span> <span class="st">"Birth Weight"</span>,</span>
 <span id="cb18-9"><a href=""></a>       <span class="at">title =</span> <span class="st">"Babies"</span>) <span class="sc">+</span></span>
 <span id="cb18-10"><a href=""></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb18-11"><a href=""></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">18</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-11"><a href=""></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">18</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -1019,7 +1022,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1169,13 +1172,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

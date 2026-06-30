@@ -1,6 +1,6 @@
 ---
 title: "Chapter 2: Description of Samples and Populations & More on Data Visualization"
-subtitle: "STAT 218 - Week 3, Lecture 4"
+subtitle: "STAT 218 - Lab 2"
 format: 
   revealjs:
       theme: slide-style.scss
@@ -66,9 +66,9 @@ _(A quick note: I used some of [Dr Dogucu's](minedogucu.com) materials to this c
 ::: {style="font-size: 30px"}
 
 - Visualizing a Single Categorical Variable
-- Visualizing a Single Numeric Variable
-- Visualizing One Categorical and One Numeric Variable
-- Visualizing Two Numeric Variables 
+- Visualizing a Single Quantitative Variable
+- Visualizing One Categorical and One Quantitative Variable
+- Visualizing Two Quantitative Variables 
 - Visualizing More than Two Variables 
 
 :::
@@ -322,11 +322,11 @@ ggplot(data = babies,
 
 :::
 
-# Visualizing a Single Numeric Variable
+# Visualizing a Single Quantitative Variable
 
 ## Histogram
 
-Let's use `bwt` variable which is a numeric variable indicating birth weight in ounces
+Let's use `bwt` variable which is a quantitative variable indicating birth weight in ounces
 
 ```{r}
 #| echo: true
@@ -338,7 +338,7 @@ ggplot(data = babies,
 
 ## Histogram
 
-Let's use `bwt` variable which is a numeric variable indicating birth weight in ounces
+Let's use `bwt` variable which is a quantitative variable indicating birth weight in ounces
 
 
 ```{r}
@@ -353,7 +353,7 @@ ggplot(data = babies,
 
 ## A Colorful Histogram
 
-Let's use `bwt` variable which is a numeric variable indicating birth weight in ounces
+Let's use `bwt` variable which is a quantitative variable indicating birth weight in ounces
 
 ```{r}
 #| echo: true
@@ -367,7 +367,7 @@ ggplot(data = babies,
 
 ## A Colorful Histogram
 
-Let's use `bwt` variable which is a numeric variable indicating birth weight in ounces
+Let's use `bwt` variable which is a quantitative variable indicating birth weight in ounces
 
 ```{r}
 #| echo: true
@@ -459,7 +459,7 @@ ggplot(babies, aes(x = bwt)) +
 :::
 
 
-# Visualizing One Categorical and One Numeric Variable
+# Visualizing A Categorical and A Quantitative Variable
 
 
 ## Boxplot
@@ -474,14 +474,14 @@ ggplot(data = na.omit(babies),
 
 ```
 
-We are visualizing a single numerical and single categorical variable by using `geom_boxplot`
+We are visualizing a single quantitative and single categorical variable by using `geom_boxplot`
 
 
 ## Anatomy of A Boxplot
 
 ![](img/boxplot.png)
 
-# Visualizing Two Numerical Variables 
+# Visualizing Two Quantitative Variables 
 
 ## Scatterplot
 
